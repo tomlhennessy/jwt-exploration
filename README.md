@@ -77,6 +77,7 @@ const token = jwt.sign(
     { expiresIn: '1h' }            // options (example: Token expires in 1 hour)
 );
 ```
+
 Check out the [`jsonwebtoken`] documentation to learn more about how you can
 customize your token using the `options` object.
 
@@ -121,11 +122,11 @@ const payload = jwt.verify(token, secret);
 When using the JWT for user authorization, you will need to determine how you
 will handle successful and unsuccessful verification.
 
-# Wrapping Up
+## Wrapping Up
 
 Remember these best practices for working with JWTs in NodeJS:
 
-* Use the `crypto` module to generate a secret token for your JWTs, and store it 
+* Use the `crypto` module to generate a secret token for your JWTs, and store it
 securely in your __.env__ file
 * Use the `jsonwebtoken` package to manage signing and verifying JWTs in your
 application
