@@ -6,29 +6,32 @@ require('dotenv').config();
 // Your code here
 
 // Define variables - DO NOT MODIFY
-let token;
-let payload;
 
 // 1. Sign (create) a JWT containing your email address
+let token; // DO NOT MODIFY! Re-assign the token variable below.
 
 // Your code here
 
-// See the JWT in the console
+// See the JWT in the console - DO NOT MODIFY
 console.log('JWT:', token);
 
 // 2. Decode a JWT Payload
 
+let payload; // DO NOT MODIFY! Re-assign the payload variable below.
+
 // Your code here
 
-// See the decoded payload in the console
+// See the decoded payload in the console - DO NOT MODIFY
 console.log('Payload:', payload);
 
 // 3. Verify a JWT
 
+let verifiedPayload; // DO NOT MODIFY! Re-assign the verifiedPayload variable below.
+
 // Your code here
 
-// See the verified payload in the console
-console.log('Verified Payload:', payload);
+// See the verified payload in the console - DO NOT MODIFY
+console.log('Verified Payload:', verifiedPayload);
 
 // (Optional) Bonus: Catch Error With Invalid Signature
 // Generate an alternate secret key and use it

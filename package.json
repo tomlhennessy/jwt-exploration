@@ -4,12 +4,18 @@
   "description": "Encode, decode and verify a JWT",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "node app.js",
+    "test": "mocha",
+    "run-test-file": "SECRET_KEY=a30d2ba48103304d394824b7e28a03d963ef7a5848f3cf3ab29bb1c07f250d6aa096494d9dd29ee7ad9b9f26eb1b9f0778df1d96d505ef4a5722126f3cdb541d node app.js"
   },
   "keywords": [],
   "author": "",
   "dependencies": {
-    "dotenv": "^16.0.0"
+    "jsonwebtoken": "^9.0.0",
+    "dotenv": "^16.0.0",
+    "chai": "^4.2.0",
+    "mocha": "^6.2.2",
+    "shelljs": "^0.8.5"
   },
   "license": "ISC"
 }

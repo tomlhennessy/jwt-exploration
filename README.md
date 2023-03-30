@@ -8,6 +8,12 @@ decoding, and hashing and verification for you.
 
 Begin by downloading the starter and running `npm install`.
 
+At the end of this practice, you will be able to run mocha tests to check your
+work. These tests rely on the `console.log`s that are already built into your
+starter. As you work through the practice, __do not modify the `console.log`s__.
+If you add your own `console.log`s, you must comment them out before running the
+mocha tests.
+
 ## Generate a Secret Token with `crypto`
 
 The first thing you will need when implementing JWTs is to generate a strong
@@ -61,17 +67,22 @@ JWT. The header will be defined by default, but can also be customized by
 defining the `header` property in the `options` object.
 
 ```javascript
+// import jsonwebtoken
 const jwt = require('jsonwebtoken');
-const token = jwt.sign(payload, secret, options);
+
+// re-assign the token variable
+token = jwt.sign(payload, secret, options);
 ```
 
 For example, if you wanted to create a token for Johnny's invite for the party,
 your implementation might look like this:
 
 ```javascript
+// import jsonwebtoken
 const jwt = require('jsonwebtoken');
 
-const token = jwt.sign( 
+// re-assign the token variable
+token = jwt.sign(
     { email: "johnny@gmail.com" }, // payload object
     process.env.SECRET_KEY,        // secret token from .env file
     { expiresIn: '1h' }            // options (example: Token expires in 1 hour)
@@ -90,9 +101,11 @@ Continuing the example from above, with `token` representing the signed
 (created) JWT:
 
 ```javascript
+// import jsonwebtoken
 const jwt = require('jsonwebtoken');
 
-const payload = jwt.decode(token); 
+// re-assign the payload variable
+payload = jwt.decode(token);
 // returns the decoded payload: {"email":"johnny@gmail.com"}
 ```
 
@@ -111,9 +124,11 @@ file.
 Continuing the example from above, with `token` representing the signed JWT:
 
 ```javascript
+// import jsonwebtoken
 const jwt = require('jsonwebtoken');
 
-const payload = jwt.verify(token, secret);
+// re-assign the verifiedPayload variable
+verifiedPayload = jwt.verify(token, secret);
 // if the secret is verified, the payload is decoded and returned
 // if the secret is not valid, a JsonWebTokenError is thrown
 // if the token is expired, a TokenExpiredError is thrown
@@ -121,6 +136,10 @@ const payload = jwt.verify(token, secret);
 
 When using the JWT for user authorization, you will need to determine how you
 will handle successful and unsuccessful verification.
+
+When you are finished with this walkthrough, run the mocha tests by running
+`mocha`. Make sure you comment out any `console.log`s that you added during the
+practice.
 
 ## Wrapping Up
 
