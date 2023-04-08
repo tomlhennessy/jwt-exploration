@@ -92,6 +92,8 @@ token = jwt.sign(
 Check out the [`jsonwebtoken`] documentation to learn more about how you can
 customize your token using the `options` object.
 
+Make sure you have a valid future expiration date and time for your token!
+
 ### 2. Decode a JWT Payload
 
 To decode a token, use the `decode()` function. This will decode the payload of
